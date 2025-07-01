@@ -1,17 +1,21 @@
-﻿string[] mArray = new string[8];
-mArray[0] = "B123";
-mArray[1] = "C234";
-mArray[2] = "A345";
-mArray[3] = "C15";
-mArray[4] = "B177";
-mArray[5] = "G3003";
-mArray[6] = "C235";
-mArray[7] = "B179";
+﻿string[] fraudulentOrderIDs = new string[3];
 
-foreach (string ids in mArray)
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+// fraudulentOrderIDs[3] = "D000";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
+int bin = 0;
+foreach (int items in inventory)
 {
-    if (ids.StartsWith("B"))
-    {
-        Console.WriteLine(ids);
-    }
+    sum += items;
+    bin++;
+    Console.WriteLine($"Bin {bin} = {items} items (Running total: {sum})");
 }
+Console.WriteLine($"We have {sum} items in inventory.");
